@@ -2,7 +2,7 @@ def main():
     plate = input("Plate: ")
     if is_valid(plate):
         print("Valid")
-    else:
+    while plate not is_valid:
         plate = input("Invalid, please input a valid plate: ")
         if is_valid(plate):
             print("Valid")
