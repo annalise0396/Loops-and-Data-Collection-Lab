@@ -3,8 +3,10 @@ def main():
     if is_valid(plate):
         print("Valid")
     else:
-        plate = input("Invalid, please input a valid plate")
-
+        plate = input("Invalid, please input a valid plate: ")
+        if is_valid(plate):
+            print("Valid")
+            
 def is_valid(s):
     # length between 2 and 6 characters
     if not 2 <= len(s) <= 6:
