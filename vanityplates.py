@@ -5,26 +5,34 @@ def main():
     else:
         print("Invalid")
 
-
 def is_valid(s):
-    #2 and 6 characters
+    # length between 2 and 6 characters
     if not 2 <= len(s) <= 6:
         return False
-    #first 2 letters alpha
-    if not s[0].isalpha() and s[1].isalpha():
+
+    #start with at least two letters
+    if not (s[0].isalpha() and s[1].isalpha()):
         return False
-    #first number - return false if zero
-    index = s[0]
-    if index == 0:
-        return False
-    
-    #no letters after numbers
-    
+
+    #first number not 0
+    has_seen_digit = False
+    for char in s:
+        if char.isdigit():
+            #first number not 0
+            if not has_seen_digit and char == '0':
+                return False
+            has_seen_digit = True
+        elif char.isalpha():
+            # letter after digit
+            if has_seen_digit:
+                return False
+        else:
+            return False
 
     return True
 
-
 if __name__ == "__main__":
     main()
+
 
 
