@@ -1,11 +1,9 @@
 def main():
-    plate = input("Plate: ")
-    if is_valid(plate):
-        print("Valid")
-    while plate not is_valid:
-        plate = input("Invalid, please input a valid plate: ")
-        if is_valid(plate):
-            print("Valid")
+  plate = input("Plate: ")
+  while not is_valid(plate):
+    plate = input("Invalid, please input a valid plate: ")
+  print("Valid")
+
             
 def is_valid(s):
     # length between 2 and 6 characters
