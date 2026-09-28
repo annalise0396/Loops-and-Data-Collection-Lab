@@ -14,8 +14,8 @@ def is_valid(s):
     if not s[0].isalpha() and s[1].isalpha():
         return False
     #first number - return false if zero
-    index = next((i for i, c in enumerate(s) if c.isdigit()), -1)
-    if index == "0":
+    index = s[0]
+    if index == 0:
         return False
     
     #no letters after numbers
